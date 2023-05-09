@@ -39,8 +39,8 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 0.09
-ball.dy = -0.09
+ball.dx = 0.1
+ball.dy = -0.1
 
 # Pen
 pen = turtle.Turtle()
@@ -56,26 +56,47 @@ pen.write("Player A: 0  Player b: 0", align="center",
 # Moviments
 def paddle1_up():
     y = paddle1.ycor()
-    y += 20
+    y += 40
     paddle1.sety(y)
 
 
 def paddle1_down():
     y = paddle1.ycor()
-    y -= 20
+    y -= 40
     paddle1.sety(y)
 
 
 def paddle2_up():
     y = paddle2.ycor()
-    y += 20
+    y += 40
     paddle2.sety(y)
 
 
 def paddle2_down():
     y = paddle2.ycor()
-    y -= 20
+    y -= 40
     paddle2.sety(y)
+
+# ball velocity
+
+
+def ballVelo1():
+    ball.dx = 0.1
+    ball.dy = -0.1
+
+
+def ballVelo2():
+    ball.dx = 0.2
+    ball.dy = -0.2
+
+
+# Theme table
+def colorTheme_blue():
+    wn.bgcolor("royal blue")
+
+
+def colorTheme_black():
+    wn.bgcolor("black")
 
 
 # Keyboard biding
@@ -85,6 +106,13 @@ wn.onkeypress(paddle1_down, "s")
 
 wn.onkeypress(paddle2_up, "Up")
 wn.onkeypress(paddle2_down, "Down")
+
+wn.onkeypress(colorTheme_blue, "c")
+wn.onkeypress(colorTheme_black, "v")
+
+wn.onkeypress(ballVelo1, "1")
+wn.onkeypress(ballVelo2, "2")
+
 
 # game loop
 while True:
